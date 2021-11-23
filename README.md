@@ -11,7 +11,7 @@ npm i deru-switcher --save
 ### How Usage?
 
 #### local component usage
-```
+```javascript
 import DeruSwitcher from 'deru-switcher';  
   
 new Vue({
@@ -28,18 +28,18 @@ new Vue({
 };
 ```
 
-```
+```javascript
 <deru-switcher v-model="enabled"></deru-switcher>
 ```
 
 #### global component usage (for example: in main.js)
-```
+```javascript
 import DeruSwitcher from 'deru-switcher';
 
 Vue.component('deru-switcher', DeruSwitcher);
 ```
 
-```
+```javascript
 <deru-switcher v-model="enabled"></deru-switcher>
 ```
 
