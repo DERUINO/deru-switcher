@@ -1,33 +1,41 @@
 <template>
-  <label for="switch" :class="preparedStyles">
-      <div class="switch-bar__button"></div>
-      <input type="checkbox" id="switch" @change="trigger" :checked="value">
+  <label :class="preparedStyles">
+      <div class="switcher__button"></div>
+      <input type="checkbox" @change="trigger" :checked="value" :disabled="disabled">
   </label>
 </template>
 
 <script>
 export default {
-    name: 'deruSwitcher',
+    name: 'DeruSwitcher',
     props: {
         value: {
+            type: Boolean,
             default: false,
         },
         color: {
+            type: String,
             default: 'default',
         },
         theme: {
+            type: String,
             default: 'default',
+        },
+        disabled: {
+            type: Boolean,
+            default: false,
         },
     },
     computed: {
        preparedStyles() {
-           const {color, theme} = this;
+           const { color, theme, value, disabled } = this;
 
            return {
-               'switch-bar': true,
-               ['switch-bar--checked']: this.value,
-               [`switch-bar-theme--${theme}`] : color,
-               [`switch-bar-color--${color}`] : color,
+               'switcher': true,
+               ['switcher--checked']: value,
+               ['switcher--disabled']: disabled,
+               [`switcher-theme--${theme}`] : theme,
+               [`switcher-color--${color}`] : color,
            }
        }, 
     },
@@ -45,13 +53,15 @@ export default {
 <style lang="scss" scoped>
     $bgColor: rgb(157, 255, 0);
 
-    .switch-bar {
+    .switcher {
         width: 44px;
         height: 25px;
         border-radius: 15px;
         background: #e3e3e3;
         cursor: pointer;
         position: relative;
+        display: block;
+        border: 1px solid rgba(0,0,0,0.05);
 
         input {
             display: none;
@@ -60,7 +70,7 @@ export default {
         &__button {
             top: 1px;
             left: 2px;
-            background: gray;
+            background: rgba(0,0,0,0.3);
             position: absolute;
             width: 22px;
             height: 22px;
@@ -71,7 +81,7 @@ export default {
         &--checked {
             background: $bgColor;
 
-            .switch-bar__button {
+            .switcher__button {
                 background: white;
                 left: inherit;
                 transform: translateX(94%);
@@ -83,14 +93,26 @@ export default {
             }
         }
 
-        &-theme--default {
+        &--disabled {
+            cursor: default;
+            .switcher__button {
+                background: rgba(0,0,0,0.1);
+            }
         }
         
         &-theme--dark {
-            background: gray;
+            background: rgba(0,0,0,0.4);
 
-            .switch-bar__button {
-                background: #e3e3e3;
+            .switcher__button {
+                background: rgba(255,255,255,0.5);
+            }
+
+            &.switcher--checked {
+                background: $bgColor;
+
+                .switcher__button {
+                    background: white;
+                }
             }
         }
     }

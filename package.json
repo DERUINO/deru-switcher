@@ -1,14 +1,12 @@
 {
-  "name": "deru-switch-bar",
-  "version": "1.0.0",
-  "description": "",
+  "name": "deru-switcher",
+  "version": "1.0.1",
+  "description": "Vue Switcher",
   "main": "src/switchbar.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "switchbar"
-  ],
+  "keywords": [],
   "author": "deruino",
   "license": "ISC",
   "devDependencies": {
