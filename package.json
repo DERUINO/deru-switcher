@@ -1,6 +1,6 @@
 {
   "name": "deru-switcher",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Vue Switcher",
   "main": "src/switchbar.vue",
   "scripts": {

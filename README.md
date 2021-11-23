@@ -2,13 +2,13 @@
 
 A Vue.js component for easy switchers with custom themes.
 
-### Installation
+## Installation
 
 ```
 npm i deru-switcher --save
 ```
 
-### How Usage?
+## How Usage?
 
 #### local component usage
 ```javascript
@@ -43,7 +43,7 @@ Vue.component('deru-switcher', DeruSwitcher);
 <deru-switcher v-model="enabled"></deru-switcher>
 ```
 
-### Props
+## Props
 
 | Prop | type | Description |
 | ---- | ------------| ---- |
