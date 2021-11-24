@@ -2,6 +2,8 @@
 
 A Vue.js component for easy switchers with custom themes.
 
+![deru-switcher](https://imgur.com/kQe8nk3)
+
 ## Installation
 
 ```
