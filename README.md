@@ -48,5 +48,5 @@ Vue.component('deru-switcher', DeruSwitcher);
 | Prop | type | Description |
 | ---- | ------------| ---- |
 | disabled | `Boolean` | Disabling switcher |
-| theme | `String` | Name of theme |
-| color | `String` | Name of color |
+| theme | `String` | Name of theme (default, dark) |
+| color | `String` | Name of color (default, blue, green, red, orange, yellow) |

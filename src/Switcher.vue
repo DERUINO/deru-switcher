@@ -51,7 +51,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    $bgColor: rgb(157, 255, 0);
+    $color-default-default: #aaa;
+    $color-default-green: #53b96e;
+    $color-default-blue: #539bb9;
+    $color-default-red: #b95353;
+    $color-default-orange: #b97953;
+    $color-default-yellow: #bab353;
+
+    $theme-default-colors: (
+        default : $color-default-default,
+        blue    : $color-default-blue,
+        red     : $color-default-red,
+        yellow  : $color-default-yellow,
+        orange  : $color-default-orange,
+        green   : $color-default-green
+    );
 
     .switcher {
         width: 44px;
@@ -62,6 +76,7 @@ export default {
         position: relative;
         display: block;
         border: 1px solid rgba(0,0,0,0.05);
+        transition: 0.3s all;
 
         input {
             display: none;
@@ -79,13 +94,12 @@ export default {
         }
 
         &--checked {
-            background: $bgColor;
+            background: $color-default-default;
 
             .switcher__button {
                 background: white;
                 left: inherit;
                 transform: translateX(94%);
-                box-shadow: 0 0 5px $bgColor, 0 0 15px $bgColor;
                 
                 &:hover {
                     background: white;
@@ -99,6 +113,19 @@ export default {
                 background: rgba(0,0,0,0.1);
             }
         }
+
+        &-theme--default {
+            @each $colorName, $color in $theme-default-colors {
+                &.switcher-color--#{$colorName} {
+                    &.switcher--checked {
+                        background: lighten($color, 20%);
+                        .switcher__button {
+                            background: $color;
+                        }
+                    }
+                }
+            }
+        }
         
         &-theme--dark {
             background: rgba(0,0,0,0.4);
@@ -107,11 +134,14 @@ export default {
                 background: rgba(255,255,255,0.5);
             }
 
-            &.switcher--checked {
-                background: $bgColor;
-
-                .switcher__button {
-                    background: white;
+            @each $colorName, $color in $theme-default-colors {
+                &.switcher-color--#{$colorName} {
+                    &.switcher--checked {
+                        background: lighten($color, 20%);
+                        .switcher__button {
+                            background: $color;
+                        }
+                    }
                 }
             }
         }

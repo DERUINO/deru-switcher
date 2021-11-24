@@ -1,8 +1,8 @@
 {
   "name": "deru-switcher",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Vue Switcher",
-  "main": "src/switchbar.vue",
+  "main": "src/Switcher.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
