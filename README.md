@@ -4,7 +4,7 @@ A Vue.js component for easy switchers with custom themes.
 
 ![deru-switcher](https://a.radikal.ru/a24/2111/34/00efc8d91ca1.jpg)
 
-![DEMO][https://deruwork.ru]
+[DEMO][https://deruwork.ru]
 ## Installation
 
 ```
